@@ -25,18 +25,18 @@
     <ion-row class="home-chips">
       
         <!-- Loop through the elementsArray and create ion-chips -->
-        <ion-chip *ngFor="let element of elementsArray; let i = index"
+        <ion-chip *ngFor="let element of data?.super_categories; let i = index"
                   [ngClass]="{'active': i === activeChipIndex}"
                   (click)="setActiveChip(i)">
-          <ion-label>{{ element }}</ion-label>
+          <ion-label>{{ element?.name }}</ion-label>
         </ion-chip>
      
       
     </ion-row>
     <ion-row class="categories-section-row">
-      <div class="category-box" *ngFor="let element of elementsArray; let i = index">
-        <img src="../../assets/download.jpg" alt="">
-        <ion-label>{{ element }}</ion-label>
+      <div class="category-box" *ngFor="let element of data?.categories; let i = index">
+        <img [src]="element?.image? element?.image:'../../assets/download.jpg'" alt="">
+        <ion-label>{{ element?.name ? element?.name:'Testing Name' }}</ion-label>
       </div>
     </ion-row>
     <ion-row class="ion-align-items-center section-header-row">
@@ -47,29 +47,28 @@
       </ion-col>
     </ion-row>
     
-    <ion-row>
-      <ion-col size="6" size-md="4" size-lg="3" *ngFor="let product of products">
-        <ion-card>
-          <ion-img src="../../assets/images/p1.png" alt="{{ product.name }}"></ion-img>
-          <ion-card-header>
-            <ion-card-title>fffffffff</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            <p>
-              Price: <ion-text color="primary"> Ring</ion-text>
-            </p>
-            <ion-badge color="success">New</ion-badge>
-          </ion-card-content>
-          <ion-button expand="full" >
-            View Details
-          </ion-button>
-        </ion-card>
+    <ion-row class="items-section-row">
+      <ng-container *ngFor="let product of items ; let i = index">
+      <ion-col  class="single-item"  *ngIf="i<12">
+       <div class="upper" >
+        <img [src]="product?.image? product?.image:'../../assets/images.jpg'" alt="product?.name">
+       </div>
+       <div class="discount">
+        -{{product?.discount_value}}%
+
+       </div>
+       <div class="lower">
+        <p>Rs {{product?.price}}</p>
+        <p>name {{product?.name}}</p>
+        <p>tax {{product?.tac}}</p>
+       </div>
       </ion-col>
+    </ng-container>
     </ion-row>
 
-    <ion-row class="ion-align-items-center ion-justify-content-center">
-      <ion-col>
-        <ion-button expand="full" >
+    <ion-row class=" view-all-button">
+      <ion-col class="btn-col-item">
+        <ion-button class="btn btn-primary" >
           View All Products
         </ion-button>
       </ion-col>
