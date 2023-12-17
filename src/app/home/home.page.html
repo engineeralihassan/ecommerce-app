@@ -1,17 +1,48 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+
+
+
+
 
 <ion-content>
+  <div class="main-hero-section">
+   <div class="hero-content">
+    <h1>Get latest winter collections</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium voluptas corporis dicta reprehenderit nam ex similique quasi ipsam adipisci cumque.</p>
+    <button class="btn btn-primary" routerLink="/shop">Shop Now</button>
+   </div>
+
+
+  </div>
   <ion-grid>
-    <ion-row class="ion-align-items-center">
+    <ion-row class="ion-align-items-center section-header-row">
       <ion-col>
         <ion-title class="ion-text-center">
-          Latest Products
+          Our Super Categories
+        </ion-title>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="home-chips">
+      
+        <!-- Loop through the elementsArray and create ion-chips -->
+        <ion-chip *ngFor="let element of elementsArray; let i = index"
+                  [ngClass]="{'active': i === activeChipIndex}"
+                  (click)="setActiveChip(i)">
+          <ion-label>{{ element }}</ion-label>
+        </ion-chip>
+     
+      
+    </ion-row>
+    <ion-row class="categories-section-row">
+      <div class="category-box" *ngFor="let element of elementsArray; let i = index">
+        <img src="../../assets/download.jpg" alt="">
+        <ion-label>{{ element }}</ion-label>
+      </div>
+    </ion-row>
+    <ion-row class="ion-align-items-center section-header-row">
+      <ion-col>
+        <ion-title class="ion-text-center">
+          Category Related Items
         </ion-title>
       </ion-col>
     </ion-row>
