@@ -4,15 +4,153 @@
 
 
 <ion-content>
-  <div class="main-hero-section">
-   <div class="hero-content">
-    <h1>Get latest winter collections</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium voluptas corporis dicta reprehenderit nam ex similique quasi ipsam adipisci cumque.</p>
-    <button class="btn btn-primary" routerLink="/shop">Shop Now</button>
-   </div>
+  <section class="section hero" id="home" aria-label="hero" data-section>
+    <div class="container">
+
+      <ul class="has-scrollbar">
+
+        <li class="scrollbar-item" ngFor="item of [1,2,3]">
+          <div class="hero-card has-bg-image" style="background-image: url('../../assets/images/hero-banner-1.jpg')">
+
+            <div class="card-content">
+
+              <h1 class="h1 hero-title">
+                Reveal The <br>
+                Beauty of Skin
+              </h1>
+
+              <p class="hero-text">
+                Made using clean, non-toxic ingredients, our products are designed for everyone.
+              </p>
+
+              <p class="price">Starting at $7.99</p>
+
+              <a href="#" class="btn btn-primary">Shop Now</a>
+
+            </div>
+
+          </div>
+        </li>
+
+        
+
+      </ul>
+
+    </div>
+  </section>
+  <!-- hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh -->
+  <ion-row>
+  <section class="section collection" id="collection" aria-label="collection" data-section>
+    <div class="container">
+
+      <ul class="collection-list">
+
+        <li *ngFor="let item of [1,2,3]">
+          <div class="collection-card has-before hover:shine">
+
+            <h2 class="h2 card-title">Summer Collection</h2>
+
+            <p class="card-text">Starting at $17.99</p>
+
+            <a href="#" class="btn-link">
+              <span class="span">Shop Now</span>
+
+              <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+            </a>
+
+            <div class="has-bg-image" style="background-image: url('../../assets/images/collection-1.jpg')"></div>
+
+          </div>
+        </li>
 
 
-  </div>
+      </ul>
+
+    </div>
+  </section>
+</ion-row>
+  <!-- gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg -->
+  <!-- jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj -->
+  <ion-row>
+    <section class="section shop" id="shop" aria-label="shop" data-section>
+      <div class="container">
+
+        <div class="title-wrapper">
+          <h2 class="h2 section-title">Our Bestsellers</h2>
+
+          <a href="#" class="btn-link">
+            <span class="span">Shop All Products</span>
+
+            <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+          </a>
+        </div>
+
+        <ul class="has-scrollbar">
+
+          <li class="scrollbar-item">
+            <div class="shop-card">
+
+              <div class="card-banner img-holder" style="--width: 540; --height: 720;">
+                <img src="../../assets/images/product-01.jpg" width="540" height="720" loading="lazy"
+                  alt="Facial cleanser" class="img-cover">
+
+                <span class="badge" aria-label="20% off">-20%</span>
+
+                <div class="card-actions">
+
+                  <button class="action-btn" aria-label="add to cart">
+                    <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                  </button>
+
+                  <button class="action-btn" aria-label="add to whishlist">
+                    <ion-icon name="star-outline" aria-hidden="true"></ion-icon>
+                  </button>
+
+                  <button class="action-btn" aria-label="compare">
+                    <ion-icon name="repeat-outline" aria-hidden="true"></ion-icon>
+                  </button>
+
+                </div>
+              </div>
+
+              <div class="card-content">
+
+                <div class="price">
+                  <del class="del">$39.00</del>
+
+                  <span class="span">$29.00</span>
+                </div>
+
+                <h3>
+                  <a href="#" class="card-title">Facial cleanser</a>
+                </h3>
+
+                <div class="card-rating">
+
+                  <div class="rating-wrapper" aria-label="5 start rating">
+                    <ion-icon name="star" aria-hidden="true"></ion-icon>
+                    <ion-icon name="star" aria-hidden="true"></ion-icon>
+                    <ion-icon name="star" aria-hidden="true"></ion-icon>
+                    <ion-icon name="star" aria-hidden="true"></ion-icon>
+                    <ion-icon name="star" aria-hidden="true"></ion-icon>
+                  </div>
+
+                  <p class="rating-text">5170 reviews</p>
+
+                </div>
+
+              </div>
+
+            </div>
+          </li>
+
+
+
+        </ul>
+
+      </div>
+    </section>
+  </ion-row>
   <ion-grid>
     <ion-row class="ion-align-items-center section-header-row">
       <ion-col>
@@ -75,6 +213,10 @@
     </ion-row>
   </ion-grid>
 </ion-content>
+
+<a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+  <ion-icon name="arrow-up" aria-hidden="true"></ion-icon>
+</a>
 
 
  
